@@ -1,0 +1,22 @@
+<form method="POST" action="/">
+    <label for="years">Years of Experience</label>
+    <input
+        type="number"
+        id="years"
+        name="years"
+        min="0"
+        max="100"
+        step="any"
+        value="{{ years }}"
+        required
+    >
+    <button type="submit">Predict Salary</button>
+</form>
+
+{% if prediction is not none %}
+    <h2>Predicted Salary: {{ prediction }}</h2>
+{% endif %}
+
+{% if error %}
+    <p>{{ error }}</p>
+{% endif %}
